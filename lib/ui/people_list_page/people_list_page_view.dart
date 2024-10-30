@@ -117,146 +117,19 @@ class PeoplesTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Örnek veri
-    final List<String> contacts = [
-      'Sudenaz',
-      'Betül',
-      'Ceren',
-      'Nehir',
-      'Sude İlayda',
-      'Ece Nur',
-      'Abdülsamet',
-      'Mine',
-      'İnci',
-      'Nilüfer',
-      'Hakan',
-    ];
-
-    return ListView.builder(
-      itemCount: contacts.length,
-      itemBuilder: (context, index) {
-        return ListTile(
-          contentPadding: const EdgeInsets.symmetric(
-            vertical: 4.0,
-            horizontal: 12.0,
-          ),
-          title: Text(
-            contacts[index]!,
-            style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-          leading: CircleAvatar(
-            backgroundColor: AppColors.lightMintGreen,
-            child: Text(contacts[index]![0]), // İlk harf
-          ),
-          onTap: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => const ChatPageView(),
-              ),
-            );
-          },
-        );
-      },
+    return Center(
+      child: Text("Kişi listesi"),
     );
   }
 }
-//TODO: Firebase bagladiktan sonra users koleksiyonuna name, lastmessage,
-// timestamp gibi ozellikler ekleyerek bu bilgilere firebasden erisebiliriz
 
 class ChatsTab extends StatelessWidget {
   const ChatsTab({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final List<Map<String, String>> contacts = [
-      {
-        'name': 'Sudenaz',
-        'lastMessage': 'Merhaba, nasılsın?',
-        'time': '14:30',
-      },
-      {
-        'name': 'Betül',
-        'lastMessage': 'Ders çalıştık mı?',
-        'time': '13:45',
-      },
-      {
-        'name': 'Nehir',
-        'lastMessage': 'Bugün buluşalım mı?',
-        'time': '12:10',
-      },
-      {
-        'name': 'Ceren',
-        'lastMessage': 'Film izledin mi?',
-        'time': '11:50',
-      },
-      {
-        'name': 'Sude İlayda',
-        'lastMessage': 'Sana bir şey soracağım.',
-        'time': '10:05',
-      },
-      {
-        'name': 'AbdülSamet',
-        'lastMessage': 'Yarın maç var.',
-        'time': '09:20',
-      },
-      {
-        'name': 'Mine',
-        'lastMessage': 'Bu akşam yemeğe çıkalım.',
-        'time': '08:15',
-      },
-      {
-        'name': 'Ece Nur',
-        'lastMessage': 'Proje üzerinde çalışıyorum.',
-        'time': '07:50',
-      },
-      {
-        'name': 'İnci',
-        'lastMessage': 'Kahvaltıya gelecek misin?',
-        'time': '07:00',
-      },
-    ];
-
-    return ListView.builder(
-      itemCount: contacts.length,
-      itemBuilder: (context, index) {
-        return ListTile(
-          title: Text(
-            contacts[index]['name']!,
-            style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-          subtitle: Text(
-            contacts[index]['lastMessage']!,
-            style: const TextStyle(
-              fontSize: 13,
-              color: AppColors.lightBlack,
-            ),
-          ),
-          leading: CircleAvatar(
-            backgroundColor: AppColors.lightMintGreen,
-            child: Text(contacts[index]['name']![0]), // İlk harf
-          ),
-          trailing: Text(
-            contacts[index]['time']!,
-            style: const TextStyle(
-              fontSize: 13,
-              color: AppColors.lightBlack,
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-          onTap: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => const ChatPageView(),
-              ),
-            );
-          },
-        );
-      },
+    return Center(
+      child: Text("Chat Kısmı"),
     );
   }
 }
