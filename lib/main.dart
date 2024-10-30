@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/ui/login_page/login_page_view.dart';
 
 void main() {
   runApp(MyApp());
@@ -7,18 +8,10 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('WhatsApp Clone'),
-          centerTitle: true,
-        ),
-        body: Center(
-          child: Text(
-            'WhatsApp Clone',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ),
-        ),
+        body: LoginPageView(),
       ),
     );
   }
